@@ -37,3 +37,9 @@ body {
   transform: translateY(5px);
   box-shadow: 0 2px 0 #0863a5, 0 3px 3px rgb(0 0 0 / 30%);
 }
+
+.buttons button.active {
+  background: #0a5694;
+  transform: translateY(3px);
+  box-shadow: 0 4px 0 #0863a5, 0 5px 3px rgb(0 0 0 / 30%);
+}

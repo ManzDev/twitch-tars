@@ -1,6 +1,7 @@
 import "./TARSFaceLegs.js";
 import "./TARSFaceMain.js";
 import "./TARSFaceSide.js";
+import "./TARSSideSide.js";
 
 class TARSBlock extends HTMLElement {
   constructor() {
@@ -104,11 +105,15 @@ class TARSBlock extends HTMLElement {
     return OPTIONS[this.type];
   }
 
+  getSide() {
+    return (this.type === "main" || this.type === "side") ? "<tars-side-side></tars-side-side>" : "";
+  }
+
   render() {
     this.shadowRoot.innerHTML = /* html */`
     <style>${TARSBlock.styles}</style>
-    <div class="face face-1"></div>
-    <div class="face face-2"></div>
+    <div class="face face-1">${this.getSide()}</div>
+    <div class="face face-2">${this.getSide()}</div>
     <div class="face face-3 bottom"></div>
     <div class="face face-4 top"></div>
     <div class="face face-5 front">${this.getFace()}</div>
