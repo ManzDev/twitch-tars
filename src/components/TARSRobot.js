@@ -50,19 +50,19 @@ class TARSRobot extends HTMLElement {
       }
 
       :host(.run) tars-block:nth-child(1) {
-        animation-delay: 0.5s;
+        animation-delay: 0s;
       }
 
       :host(.run) tars-block:nth-child(2) {
-        animation-delay: 1s;
+        animation-delay: 0.5s;
       }
 
       :host(.run) tars-block:nth-child(3) {
-        animation-delay: 1.5s;
+        animation-delay: 1s;
       }
 
       :host(.run) tars-block:nth-child(4) {
-        animation-delay: 2s;
+        animation-delay: 1.5s;
       }
 
       @keyframes run {
