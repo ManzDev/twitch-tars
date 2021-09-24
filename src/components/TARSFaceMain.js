@@ -33,6 +33,8 @@ class TARSFaceMain extends HTMLElement {
         color: #1BE820;
         font-size: 2px;
         white-space: pre;
+        z-index: 1;
+        position: relative;
       }
 
       .black.screen::before {
@@ -40,7 +42,8 @@ class TARSFaceMain extends HTMLElement {
         width: 100%;
         height: 20%;
         display: block;
-        background: #2225;
+        background: #222a;
+        z-index: 2;
       }
 
       .text {
@@ -61,6 +64,21 @@ class TARSFaceMain extends HTMLElement {
         letter-spacing: -5px;
       }
 
+      .joke {
+        background: #9CBEAB;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        top: 4px;
+        left: 2px;
+        opacity: 0;
+        transition: opacity: 0.1s;
+      }
+
+      .joke.on {
+        opacity: 1;
+      }
+
       .center {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -77,6 +95,7 @@ class TARSFaceMain extends HTMLElement {
 
   getTerminalText() {
     return `
+      <div class="joke"></div>
       Welcome to TARS Corporation (TM) Terminal
       Copyright (C) 2984-2987, TARS Corp. Software
       OS version: 22A1-9166-69
@@ -102,6 +121,16 @@ class TARSFaceMain extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    const time = ~~(Math.random() * 5000);
+    setTimeout(() => this.enableJoke(), time);
+  }
+
+  enableJoke() {
+    const joke = this.shadowRoot.querySelector(".joke");
+    joke.classList.add("on");
+    setTimeout(() => joke.classList.remove("on"), 2000);
+    const time = 5000 + ~~(Math.random() * 30000);
+    setTimeout(() => this.enableJoke(), time);
   }
 
   render() {

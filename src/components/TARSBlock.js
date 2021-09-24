@@ -75,10 +75,10 @@ class TARSBlock extends HTMLElement {
         background: #444;
       }
 
-      .face-1::after,
-      .face-2::after,
-      .face-5::after,
-      .face-6::after {
+      .face-1::before,
+      .face-2::before,
+      .face-5::before,
+      .face-6::before {
         content: "";
         display: block;
         width: 100%;
@@ -86,6 +86,7 @@ class TARSBlock extends HTMLElement {
         background: linear-gradient(to bottom, #fff3, #0003);
         position: absolute;
         top: 0;
+        opacity: 1;
       }
     `;
   }
