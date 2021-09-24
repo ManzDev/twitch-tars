@@ -22,7 +22,6 @@ class TARSBlock extends HTMLElement {
         position: relative;
         perspective: 8000px;
         transform-style: preserve-3d;
-        /* transform: rotateX(15deg) rotateY(15deg); */
       }
 
       .face-1, .face-2, .face-5, .face-6 {
@@ -33,6 +32,8 @@ class TARSBlock extends HTMLElement {
         width: var(--width);
         height: var(--height);
         position: absolute;
+        perspective: 8000px;
+        transform-style: preserve-3d;
       }
 
       /* right face */

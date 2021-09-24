@@ -14,7 +14,7 @@ class TARSRobot extends HTMLElement {
         justify-content: center;
         transform: rotateY(20deg);
         transform-style: preserve-3d;
-        perspective: 8000px;
+        perspective: 250000px;
         gap: 4px;
       }
 

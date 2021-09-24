@@ -10,7 +10,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  perspective: 900px;
+
+  /* perspective: 900px; */
 }
 
 .buttons {
@@ -27,7 +28,7 @@ body {
   border-radius: 10px;
   color: #eee;
   box-shadow: 0 7px 0 #0863a5, 0 8px 3px rgb(0 0 0 / 30%);
-  transition: all .25s;
+  transition: all 0.25s;
   cursor: pointer;
 }
 

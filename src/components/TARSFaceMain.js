@@ -37,6 +37,12 @@ class TARSFaceMain extends HTMLElement {
         position: relative;
       }
 
+      .black.screen > p {
+        transform: translate(0, 4px);
+        margin: 0;
+        padding: 0;
+      }
+
       .black.screen::before {
         content: "";
         width: 100%;
@@ -44,6 +50,7 @@ class TARSFaceMain extends HTMLElement {
         display: block;
         background: #222a;
         z-index: 2;
+        position: absolute;
       }
 
       .text {
@@ -94,29 +101,31 @@ class TARSFaceMain extends HTMLElement {
   }
 
   getTerminalText() {
-    return `
+    return /* html */`
       <div class="joke"></div>
-      Welcome to TARS Corporation (TM) Terminal
-      Copyright (C) 2984-2987, TARS Corp. Software
-      OS version: 22A1-9166-69
+      <p>
+        Welcome to TARS Corporation (TM) Terminal
+        Copyright (C) 2984-2987, TARS Corp. Software
+        OS version: 22A1-9166-69
 
-      Initializing...
-      ==================================
+        Initializing...
+        ==================================
 
-      Memory Test: 281474976710656B OK
+        Memory Test: 281474976710656B OK
 
-      Auto-Detecting modules ... TARS "H@CK-MODULE" found!
+        Auto-Detecting modules ... TARS "H@CK-MODULE" found!
 
-      Searching for devices nearby...
-      ==================================
+        Searching for devices nearby...
+        ==================================
 
-      Please choose an option:
+        Please choose an option:
 
-       (1) "Stellar Coffee"
-       (2) "Hack the box with S4vitaar"
-       (3) "CSS with ManzDev"
+        (1) "Stellar Coffee"
+        (2) "Hack the box with S4vitaar"
+        (3) "CSS with ManzDev"
 
-       What is your choice: _`;
+        What is your choice: _
+      </p>`;
   }
 
   connectedCallback() {
